@@ -33,6 +33,21 @@ class TrackController {
     }
 
 
+    async deleteOne(req, res, next) {
+        try {
+            const tracks = await Track.findAll({
+                where: {
+                    id: +req.params.id
+                }
+            })
+            const track = tracks[0]
+            await track.destroy()
+            res.status(204).json({})
+        } catch (e) {
+            next(ApiError.badRequest(e.message))
+        }
+    }
+
 
 
 

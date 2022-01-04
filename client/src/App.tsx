@@ -15,11 +15,12 @@ function App() {
       <Bar />
       <div className="app__wrapper">
           <div className="trackList__wrapper">
-              {track && track.map((audioFile, index) => {
+              {isLoading ? <div>loading...</div> : track && track.map((audioFile, index) => {
                   return (
                       <TrackListItem key={audioFile.id} index={index} id={audioFile.id} author={audioFile.author} track_name={audioFile.track_name} audio={audioFile.audio} createdAt={audioFile.createdAt} updatedAt={audioFile.updatedAt} />
                   )
               })}
+              {error ? <div style={{'color':'red'}}>Произошла ошибка при загрузке треков</div> : null}
           </div>
           <div className="currentTrack__wrapper">
               <CurrentTrack />

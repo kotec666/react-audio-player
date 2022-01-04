@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react"
-import {ITrack, ITrackReq, ITrackRes} from "../models/ITrack"
+import {ITrack, ITrackRes} from "../models/ITrack"
 
 
 export const trackAPI = createApi({
@@ -13,11 +13,18 @@ export const trackAPI = createApi({
             }),
             providesTags: result => ['Track']
         }),
-        createTrack: build.mutation<ITrackRes, ITrackReq>({
+        createTrack: build.mutation<ITrackRes, FormData>({
             query: (track) => ({
                 url: `/track`,
                 method: 'POST',
                 body: track
+            }),
+            invalidatesTags: ['Track']
+        }),
+        deleteTrack: build.mutation<number, number>({
+            query: (id) => ({
+                url: `/track/${id}`,
+                method: 'DELETE',
             }),
             invalidatesTags: ['Track']
         }),

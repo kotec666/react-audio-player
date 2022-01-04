@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect} from 'react'
+import React, {ChangeEvent} from 'react'
 import s from "../CurrentTrack/CurrentTrack.module.css"
 import {useAppSelector} from "../../hooks/redux"
 

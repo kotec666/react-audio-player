@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import s from './CurrentTrack.module.css'
 import {faCirclePause, faCirclePlay, faBackward, faForward} from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
@@ -24,12 +24,6 @@ const CurrentTrack = () => {
     const {track: tracks} = useAppSelector(state => state.trackReducer)
     const dispatch = useAppDispatch()
 
-    const getTrack = () => {
-       let nextTrack
-        nextTrack = tracks.filter((track, i) => i === trackIndex + 1)
-         dispatch(setCurrIndex(trackIndex + 1))
-         dispatch(setActiveTrack(nextTrack[0]))
-    }
 
     const toPrevTrack = () => {
         if (trackIndex - 1 < 0) {

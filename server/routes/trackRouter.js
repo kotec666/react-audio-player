@@ -6,6 +6,7 @@ const trackController = require('./../controllers/trackController')
 router.post('/', trackController.create)
 router.get('/', trackController.getAll)
 router.get('/:id', trackController.getOne)
+router.delete('/:id', trackController.deleteOne)
 
 
 

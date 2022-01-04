@@ -1,10 +1,11 @@
 import React from 'react'
 import s from './Track.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
+import {faPlay, faTrash} from '@fortawesome/free-solid-svg-icons'
 import { faPause } from '@fortawesome/free-solid-svg-icons'
 import { useAppDispatch, useAppSelector } from "../../hooks/redux"
 import {pauseTrack, setActiveTrack, setCurrIndex} from '../../store/reducers/PlayerReducer'
+import {trackAPI} from "../../servicesAPI/TrackService";
 
 
 interface ITrackListItemProps {
@@ -24,12 +25,18 @@ const TrackListItem:React.FC<ITrackListItemProps> = ({id, track_name, author, au
     const {active, pause} = useAppSelector(state => state.playerReducer)
     const dispatch = useAppDispatch()
 
+    const [deleteTrack] = trackAPI.useDeleteTrackMutation()
+
     const Track = {id, track_name, author, audio}
 
     const play = () => {
         dispatch(setActiveTrack(Track))
         dispatch(pauseTrack())
         dispatch(setCurrIndex(index))
+    }
+
+    const handleDeleteTrack = async () => {
+        await deleteTrack(id).unwrap()
     }
 
 
@@ -44,7 +51,12 @@ const TrackListItem:React.FC<ITrackListItemProps> = ({id, track_name, author, au
             <div>{author.length <= 14 ? author && author : author && author.substring(0, 6) + '...'}</div>
             <div>-</div>
             <div>{track_name.length <= 14 ? track_name && track_name : track_name && track_name.substring(0, 6) + '...'}</div>
-            <div style={{'fontSize': '14px'}}>не надо</div>
+            <div
+                style={{'cursor': 'pointer'}}
+                onClick={handleDeleteTrack}
+            >
+                <FontAwesomeIcon icon={faTrash} />
+            </div>
         </div>
     )
 }

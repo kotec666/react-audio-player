@@ -1,0 +1,84 @@
+.Track__Wrapper {
+    width: 80%;
+    height: 80%;
+}
+
+.audio__name__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    width: 80%;
+    height: 450px;
+
+    min-width: 250px;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 15%, rgb(40, 184, 92) 84%);
+}
+
+.audio__name__wrapper h4:first-child {
+    font-size: 50px;
+}
+
+.audio__name__wrapper h4:last-child {
+    font-size: 30px;
+}
+
+.actions__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 19%;
+
+    margin-top: 3rem;
+}
+
+.action {
+   color: #C4C4C4;
+   cursor: pointer;
+}
+
+.pause {
+    width: 120px;
+    height: 120px;
+    transition: .5s;
+}
+
+
+.control {
+    width: 50px;
+    height: 50px;
+    transition: .5s;
+}
+
+
+.control:hover, .pause:hover {
+    transition: .5s;
+    transform: translateY(5px);
+}
+
+.second__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    min-width: 240px;
+    column-gap: 1%;
+}
+
+.second__controls pre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.second__controls .timeline {
+    width: 100%;
+}
+
+.volumeControls {
+    display: flex;
+    column-gap: 2%;
+}

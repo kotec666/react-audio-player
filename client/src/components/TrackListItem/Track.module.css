@@ -1,0 +1,21 @@
+.TrackItem {
+    width: 95%;
+    height: 83px;
+    transition: .5s;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8%;
+
+    padding-left: 3%;
+}
+
+.TrackItem:hover {
+    transition: .5s;
+    background: #333333;
+}
+
+.playBtn {
+    cursor: pointer;
+}

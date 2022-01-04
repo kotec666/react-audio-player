@@ -1,0 +1,94 @@
+.bar__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+    column-gap: 15%;
+    padding-left: 5%;
+}
+
+.bar__wrapper h4 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 47px;
+
+    color: #FFFFFF;
+}
+
+
+.bar__wrapper  button {
+    height: 63px;
+
+    padding: 1% 1% 1% 1%;
+
+    background: #28B85C;
+    border-radius: 20px;
+
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #FFFFFF;
+
+
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+.choose__btn, .upload__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    cursor: pointer;
+
+    width: 223px;
+    height: 52px;
+
+    background: #28B85C;
+    border-radius: 20px;
+
+    padding: 1%;
+    transition: .5s;
+}
+
+.upload__btn {
+    transition: .5s;
+    align-self: center;
+}
+
+.upload__btn:hover, .choose__btn:hover {
+    transition: .5s;
+    transform: translateY(5px);
+}
+
+.bar__wrapper form {
+    margin-left: 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
+.bar__wrapper form input {
+    width: 50%;
+    height: 30px;
+}
+
+.bar__wrapper form input:focus {
+    outline: none;
+    border: 2px solid #28B85C;
+}
+
+.bar__wrapper form h4 {
+    font-size: 24px;
+}

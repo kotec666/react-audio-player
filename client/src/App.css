@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #121312;
+
+    font-family: 'Roboto', sans-serif;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+
+
+.app__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    column-gap: 25%;
+}
+
+.trackList__wrapper {
+    width: 30%;
+    height: 84.2vh;
+
+    background: #222222;
+
+    overflow: auto;
+}
+
+.trackList__wrapper::-webkit-scrollbar {
+    width: 15px;
+}
+
+.trackList__wrapper::-webkit-scrollbar-thumb {
+    background: #C4C4C4;
+}
+
+.currentTrack__wrapper {
+    width: 35%;
+}
